@@ -10,6 +10,7 @@ import Button from "../components/Button";
 import { useAuth } from "../context/auth/use-auth";
 import { auth, firestore, googleAuthProvider } from "../utils/firebase";
 import debounce from "lodash.debounce";
+import Image from "next/image";
 
 export default function EnterPage() {
   const { user, username } = useAuth();
@@ -82,11 +83,11 @@ export default function EnterPage() {
     } else {
       return <></>;
     }
-  }, [loading, isValid, username]);
+  }, [loading, isValid, username, value]);
 
   useEffect(() => {
     checkUsername(value);
-  }, [value]);
+  }, [value, checkUsername]);
 
   return (
     <main>
@@ -121,7 +122,7 @@ export default function EnterPage() {
         )
       ) : (
         <Button onClick={signInWithGoogle}>
-          <img src="/google.png" alt="Google logo" /> Sign in with google
+          <Image src="/google.png" alt="Google logo" /> Sign in with google
         </Button>
       )}
     </main>

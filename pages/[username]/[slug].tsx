@@ -26,7 +26,7 @@ export default function PostPage(props) {
         </p>
         <AuthGate
           fallback={
-            <Link href="/enter">
+            <Link href="/enter" passHref>
               <button>Sign up</button>
             </Link>
           }
@@ -42,14 +42,11 @@ export const getStaticProps = async ({ params }) => {
   const { username, slug } = params;
   const userDoc = await getUserWithUsername(username);
 
-  // console.log(username, slug);
-
   let post;
   let path;
 
   if (userDoc) {
     const postRef = userDoc.ref.collection("posts").doc(slug);
-    // console.log(postRef, "post");
     post = postToJSON(await postRef.get());
 
     path = postRef.path;

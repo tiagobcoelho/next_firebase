@@ -51,7 +51,7 @@ const PostManager = () => {
             <Button onClick={() => setPreview(!preview)}>
               {preview ? "Edit" : "Preview"}
             </Button>
-            <Link href={`/${post.username}/${post.slug}`}>
+            <Link href={`/${post.username}/${post.slug}`} passHref>
               <button className="btn-blue">Live view</button>
             </Link>
           </aside>

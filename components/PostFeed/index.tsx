@@ -10,7 +10,7 @@ export default function PostFeed({ posts, admin }: PostFeedProps) {
   return posts ? (
     <>
       {posts.map((post) => {
-        return <PostItem post={post} admin={admin} />;
+        return <PostItem key={post.uid} post={post} admin={admin} />;
       })}
     </>
   ) : null;
