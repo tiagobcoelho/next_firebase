@@ -23,7 +23,11 @@ export default function Navbar() {
             </li>
             <li>
               <Link href={`/${username}`} passHref>
-                <Image src={user?.photoURL} />
+                {user?.photoURL ? (
+                  <Image src={user?.photoURL || ""} />
+                ) : (
+                  <p style={{ cursor: "pointer" }}>@{username}</p>
+                )}
               </Link>
             </li>
           </>

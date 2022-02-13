@@ -13,7 +13,7 @@ export default function UserProfile({ user }: UserProfileProps) {
       {user && user.photoURL && (
         <Image
           alt={`${user.username} profile pic`}
-          src={user.photoURL}
+          src={user.photoURL || ""}
           className="card-img-center"
         />
       )}

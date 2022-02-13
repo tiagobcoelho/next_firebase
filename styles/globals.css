@@ -158,7 +158,7 @@ button.btn-google {
   color: var(--color-text);
 }
 
-.btn img {
+.btn .img {
   width: 30px;
   margin-right: 10px;
 }

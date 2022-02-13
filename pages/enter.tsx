@@ -122,7 +122,8 @@ export default function EnterPage() {
         )
       ) : (
         <Button onClick={signInWithGoogle}>
-          <Image src="/google.png" alt="Google logo" /> Sign in with google
+          <Image className="img" src="/google.png" alt="Google logo" /> Sign in
+          with google
         </Button>
       )}
     </main>
